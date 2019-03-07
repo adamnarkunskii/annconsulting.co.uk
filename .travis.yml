@@ -1,7 +1,21 @@
 language: ruby
 rvm:
   - 2.6.1
-install: gem install jekyll -v 3.8.5 && gem install s3_website
-script: jekyll build
+branches:
+  only:
+    - master
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+addons:
+  apt:
+    packages:
+    - libcurl4-openssl-dev
+sudo: false
+cache: bundler
+script: ./script/ci.sh
 after_success: s3_website push
+
+notifications:
+  email: false
 
