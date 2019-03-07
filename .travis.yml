@@ -13,7 +13,7 @@ addons:
     - libcurl4-openssl-dev
 sudo: false
 cache: bundler
-script: ./script/ci.sh
+script: ./script/cibuild
 after_success: s3_website push
 
 notifications:
