@@ -23,4 +23,4 @@ group :jekyll_plugins do
 end
 
 gem "html-proofer", "~> 3.10.0"
-gem "s3_website", "~> 3.4.0"
+
